@@ -1,0 +1,47 @@
+
+Samuel-Igwudu
+/
+sorting_algorithms
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+sorting_algorithms/0-bubble_sort.c
+@Samuel-Igwudu
+Samuel-Igwudu modified
+ 1 contributor
+30 lines (28 sloc)  504 Bytes
+#include "sort.h"
+
+/**
+ * bubble_sort - function that sorts an array of integers in ascending order
+ * @array: array
+ * @size: size of array
+ *
+ * Return: void
+ */
+void bubble_sort(int *array, size_t size)
+{
+	size_t i, n;
+	int tmp, swap;
+
+	for (n = size, swap = 1; n > 0 && swap; n--)
+	{
+		swap = 0;
+		for (i = 0; (i + 1) < n; i++)
+		{
+			if (array[i] > array[i + 1])
+			{
+				tmp = array[i + 1];
+				array[i + 1] = array[i];
+				array[i] = tmp;
+				print_array(array, size);
+				swap = 1;
+			}
+		}
+	}
+}
